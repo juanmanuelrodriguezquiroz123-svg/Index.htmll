@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+.screen {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.hidden {
+  display: none;
+}
+h1, h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #ff6b35;
+  font-weight: bold;
+}
+h3 {
+  color: #eee;
+  margin: 15px 0 10px;
+  font-size: 1.2rem;
+}
+input, button {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: transform 0.2s, opacity 0.2s;
+}
+input {
+  background: #f0f0f0;
+  color: #333;
+  text-indent: 10px;
+}
+button {
+  background: #ff6b35;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+button:active { transform: scale(0.98); }
+button.secondary { background: #2c3e50; }
+.permission-btn { background: #27ae60; margin-bottom: 10px; }
+.logout { background: #e74c3c; margin-top: 20px; }
+.status p { 
+  background: #0f0f1a; 
+  padding: 10px; 
+  border-radius: 10px; 
+  margin: 10px 0;
+  color: #f4a261;
+  font-family: monospace;
+}
+.messages ul {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.messages li {
+  background: #0f0f1a;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 10px;
+  color: #ccc;
+  border-left: 4px solid #ff6b35;
+}
+.child-info {
+  background: #0f0f1a;
+  padding: 15px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.controls button { flex: 1; background: #3498db; }
