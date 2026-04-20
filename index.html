@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Auto Guardián: Control Parental</title>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container" id="app">
+    <!-- Pantalla de Login -->
+    <div id="loginScreen" class="screen">
+      <h1>Auto Guardián 🚗</h1>
+      <input type="email" id="loginEmail" placeholder="Correo electrónico">
+      <input type="password" id="loginPassword" placeholder="Contraseña">
+      <button id="loginBtn">Iniciar Sesión</button>
+      <button id="registerBtn" class="secondary">Registrarse</button>
+    </div>
+
+    <!-- Dashboard del Padre -->
+    <div id="parentScreen" class="screen hidden">
+      <h2>Panel de Control 👨‍👩‍👧</h2>
+      <div class="child-info">
+        <h3>Estado del Niño</h3>
+        <p>Ubicación: <span id="parentLocation">Cargando...</span></p>
+        <div class="controls">
+          <button id="viewCameraBtn">📷 Ver Cámara</button>
+          <button id="listenAudioBtn">🎤 Escuchar Audio</button>
+        </div>
+      </div>
+      <div class="messages">
+        <h3>Últimos Mensajes</h3>
+        <ul id="messagesList"></ul>
+      </div>
+      <button id="logoutParentBtn" class="logout">Cerrar Sesión</button>
+    </div>
+
+    <!-- Panel del Niño -->
+    <div id="childScreen" class="screen hidden">
+      <h2>Mi Dispositivo 👶</h2>
+      <div class="permissions">
+        <button id="enableCameraBtn" class="permission-btn">📷 Activar Cámara</button>
+        <button id="enableMicBtn" class="permission-btn">🎤 Activar Micrófono</button>
+        <button id="enableLocationBtn" class="permission-btn">📍 Activar Ubicación</button>
+      </div>
+      <div class="status">
+        <p id="cameraStatus">🔴 Cámara: Inactiva</p>
+        <p id="micStatus">🔴 Micrófono: Inactivo</p>
+        <p id="locationStatus">🔴 Ubicación: Inactiva</p>
+      </div>
+      <button id="logoutChildBtn" class="logout">Cerrar Sesión</button>
+    </div>
+  </div>
+  <!-- Elemento oculto para el video de la cámara -->
+  <video id="localVideo" autoplay muted playsinline style="display: none;"></video>
+  <script src="app.js"></script>
+</body>
+</html>
